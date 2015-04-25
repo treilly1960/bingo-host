@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="cardSeries" type="cardSeriesType" />
+
+  <xsd:complexType name="cardSeriesType">
+    <xsd:sequence>
+      <xsd:element name="seriesId" type="seriesIdType" />
+      <xsd:element name="creationDate" type="creationDateType" />
+      <xsd:element name="seriesCreator" type="seriesCreatorType" />
+      <xsd:element name="card" minOccurs="8" maxOccurs="unbounded" type="cardType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="cardType">
+    <xsd:sequence>
+      <xsd:element name="cardNumber" type="cardNumberType" />
+      <xsd:element minOccurs="5" maxOccurs="5" name="bNumbers" type="bNumbersType" />
+      <xsd:element minOccurs="5" maxOccurs="5" name="iNumbers" type="iNumbersType" />
+      <xsd:element minOccurs="5" maxOccurs="5" name="nNumbers" type="nNumbersType" />
+      <xsd:element minOccurs="5" maxOccurs="5" name="gNumbers" type="gNumbersType" />
+      <xsd:element minOccurs="5" maxOccurs="5" name="oNumbers" type="oNumbersType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="seriesIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:maxLength value="32"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="creationDateType">
+    <xsd:restriction base="xsd:string">
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:maxLength value="10"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="seriesCreatorType">
+    <xsd:restriction base="xsd:string">
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:maxLength value="32"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="cardNumberType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1000"/>
+      <xsd:maxInclusive value="2999"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="bNumbersType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1"/>
+      <xsd:maxInclusive value="15"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="iNumbersType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="16"/>
+      <xsd:maxInclusive value="30"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="nNumbersType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="31"/>
+      <xsd:maxInclusive value="45"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="gNumbersType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="46"/>
+      <xsd:maxInclusive value="60"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="oNumbersType">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="61"/>
+      <xsd:maxInclusive value="75"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
