@@ -1,7 +1,8 @@
 package bingo;
 
 import java.util.BitSet;
-import java.lang.String;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 //! A winning card class.
 /*!
@@ -230,11 +231,84 @@ public class WinningCard
     // Up Diagonal.
     private final BitSet updiagonal0;
     
+    public ObservableList<String> bingoPatternChoiceBoxItems;
+    
     //! A default constructor.
     /*!
       A default constructor which initializes the winning bingo patterns.
     */
     public WinningCard() {
+        bingoPatternChoiceBoxItems = FXCollections.observableArrayList(
+            "AnyDiagonalRowOrColumn",
+            "Airplane",
+            "Arrowhead",
+            "BAndOBingo",
+            "Barbell",
+            "BlockOf6",
+            "BlockOf8",
+            "BlockOf9",
+            "BowTie1",
+            "BowTie2",
+            "Cents",
+            "ChampagneGlassEmpty",
+            "ChampagneGlassFull",
+            "Checkmark",
+            "Column",
+            "Coverall",
+            "Diagonal",
+            "Diamond",
+            "DiamondInside",
+            "DiamondOutline",
+            "DollarSign",
+            "DoubleBingo",
+            "DoubleOutside",
+            "DownDiagonal",
+            "FieldGoal",
+            "FourCornersBig",
+            "FourCornersSmall",
+            "FrameInside",
+            "FrameOutside",
+            "GoBingo",
+            "Kite",
+            "Ladder",
+            "LayerCake",
+            "LetterC",
+            "LetterH",
+            "LetterI",
+            "LetterL",
+            "LetterM",
+            "LetterN",
+            "LetterP",
+            "LetterS",
+            "LetterT",
+            "LetterW",
+            "LetterX",
+            "LetterY",
+            "LetterZ",
+            "LoveLetter",
+            "Lucky7",
+            "PercentSign",
+            "PicnicTable",
+            "PlusSign",
+            "Pyramid",
+            "RailroadTracks",
+            "Row",
+            "Sputnik",
+            "Stamp1",
+            "Stamp2",
+            "Stamp4",
+            "StampAnd3Corners",
+            "StampAndLine",
+            "StraightAndCorners",
+            "TelephonePole",
+            "TopAndBottom",
+            "TopHat",
+            "Tree",
+            "TripleBingo",
+            "Turtle",
+            "UpDiagonal"
+        );
+    
         row0 = new BitSet(25);
         row0.set(0);
         row0.set(5);

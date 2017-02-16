@@ -11,10 +11,10 @@ package bingo;
  */
 public class ShuffledIntegers {
     
-    private int m_min;
-    private int m_max;
+    private final int m_min;
+    private final int m_max;
     private int m_lastIndex;
-    private int[] m_integers;
+    private final int[] m_integers;
     private int bNumbersLeft, iNumbersLeft, nNumbersLeft, gNumbersLeft, oNumbersLeft;
     private boolean bRangeSelected, iRangeSelected, nRangeSelected, gRangeSelected, oRangeSelected;
 
